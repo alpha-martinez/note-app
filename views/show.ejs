@@ -1,7 +1,26 @@
-<h2>Create a new note</h2>
+<h2>Homepage</h2>
+
+<!-- Categories will go in here -->
+  <!-- show ejs have the return object go inside ediotr div -->
+
+  <h2>Create a new note</h2>
 
 <!-- Create toolbar/editor container -->
-  <div id="editor">Hello</div>
+
+
+<!-- <form method="POST" action="/show/">
+    <input name="name" id="name" class="form-control" required><br>
+    <label for="content">Content</label>
+    <textarea type="text" class="form-control" id="content" name="content" required></textarea>
+    <input type="submit" class="btn btn-primary">
+</form> -->
+
+  <div id="editor">Hello
+      <input name="title" id="title" class="form-control" required>
+  </div>
+  <br>
+  <input type="submit" class="btn btn-primary">
+  
 
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
@@ -27,6 +46,7 @@
 
   ['clean']                                         // remove formatting button
 ];
+
 
 var quill = new Quill('#editor', {
   modules: {
