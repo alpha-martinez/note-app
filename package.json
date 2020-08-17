@@ -24,6 +24,7 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "pg": "^7.11.0",
+    "quill": "^1.3.7",
     "sequelize": "^5.8.12"
   },
   "description": "Express authentication template using Passport + flash messages + custom middleware",

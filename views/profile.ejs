@@ -5,35 +5,3 @@
 
 How you doing today?
 
-<h1><%= category.title %> <small></h1>
-
-<p>
-  <strong><%= moment(category.createdAt).calendar() %></strong>
-</p>
-<p><%= category.content %></p>
-<br>
-<br>
-<br>
-<div>
-  <h2>Comments</h2> 
-  <% article.comments.forEach(c => { %> 
-    <p><%= c.dataValues.name %> </p>
-  <p><%= c.dataValues.content  %> </p>
-<% }) %>
-</div>
-<br>
-<br>
-  <h3>Post your comment here</h3>
-  <form method="POST" action="/articles/<%= article.id %>">
-    <label for="name">Name</label>
-    <input name="name" id="name" class="form-control" required><br>
-    <label for="content">Content</label>
-    <textarea type="text" class="form-control" id="content" name="content" required></textarea>
-    <input type="submit" class="btn btn-primary">
-</form>
-
- 
-
-<hr />
-
-<a href="/">&larr; Back Home</a>

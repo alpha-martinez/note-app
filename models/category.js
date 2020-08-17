@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.category.belongsTo(models.user)
+      models.category.hasMany(models.notes)
     }
   };
   category.init({
@@ -20,5 +22,5 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'category',
   });
-  return category;
+  return category; //note.setCategory (findOrCreate Category)
 };

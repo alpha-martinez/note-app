@@ -7,15 +7,15 @@ const { route } = require('./auth');
 //POST /files - create a new file with content 
 
 router.post('/', (req, res) => {
-    db.category.create({
-        name: req.body.categoryName
+    db.category.findOrCreate({
+        name: req.body.categoryName,
+        userId: req.params.id
     }).then((post) => {
         res.redirect('/')
     }).catch((error) => {
         console.log(error, 'error')
     })
 })
-
 
 
 //GET /files/:id - display a specific file and its content 
