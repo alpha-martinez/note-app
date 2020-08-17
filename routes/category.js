@@ -18,3 +18,8 @@ router.get('/:id', (res, req) => {
     res.render('/')
 })
 
+
+//DELETE
+
+//EDIT 
+
