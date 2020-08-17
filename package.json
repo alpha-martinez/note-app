@@ -25,5 +25,18 @@
     "passport-local": "^1.0.0",
     "pg": "^7.11.0",
     "sequelize": "^5.8.12"
-  }
+  },
+  "description": "Express authentication template using Passport + flash messages + custom middleware",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alpha-martinez/authapp.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/alpha-martinez/authapp/issues"
+  },
+  "homepage": "https://github.com/alpha-martinez/authapp#readme"
 }
