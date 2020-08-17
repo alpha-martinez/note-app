@@ -1,5 +1,5 @@
 {
-  "name": "authapp",
+  "name": "note-app",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -38,5 +38,6 @@
   "bugs": {
     "url": "https://github.com/alpha-martinez/authapp/issues"
   },
-  "homepage": "https://github.com/alpha-martinez/authapp#readme"
+  "homepage": "https://github.com/alpha-martinez/authapp#readme",
+  "keywords": []
 }
