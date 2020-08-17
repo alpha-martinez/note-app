@@ -7,8 +7,13 @@ const { route } = require('./auth');
 //POST /files - create a new file with content 
 
 router.post('/', (req, res) => {
-    res.render('file')
-    
+    db.category.create({
+        name: req.body.categoryName
+    }).then((post) => {
+        res.redirect('/')
+    }).catch((error) => {
+        console.log(error, 'error')
+    })
 })
 
 
