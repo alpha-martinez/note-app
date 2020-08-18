@@ -13,8 +13,19 @@ router.post('/', (req, res) => {
         content: req.body.content,
         categoryId: req.params.id
     }).then((post) => {
-        res.redirect(`/show/${req.params.id}`)
+        res.redirect(`/`)
     }).catch((error) => {
+        console.log(error, 'error')
+    })
+})
+
+//GET to display making a new note
+
+router.get('/', (res,req) => {
+    db.notes.findAll()
+    .then((notes) => {
+        res.render('/show')
+    }).catch(error => {
         console.log(error, 'error')
     })
 })
@@ -30,14 +41,5 @@ router.get('/:id', (res, req) => {
 //DELETE
 
 //EDIT 
-
-
-
-// render.post('/', (reqm res) => {
-//     db.notes.findOrCreate({
-
-//     })
-// })
-
 
 module.exports = router;
