@@ -51,6 +51,17 @@ app.get('/profile', isLoggedIn, (req, res) => {
 
 app.use('/auth', require('./routes/auth'));
 
+app.use('/create', (req, res) => {
+  res.render('create');
+})
+
+app.use('/show', (req, res) => {
+  res.render('show', { notes: req.notes })
+})
+
+//bring in your controllers here
+app.use('/note', require('./controllers/note'));
+
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
@@ -60,4 +71,3 @@ const server = app.listen(port, () => {
 module.exports = server;
 
 
-//hi
