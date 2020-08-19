@@ -1,26 +1,12 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class folder extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-      models.folder.belongsTo(models.user)
-      models.folder.hasMany(models.note)
-    }
-  };
-  folder.init({
+  const folder = sequelize.define('folder', {
     folderTitle: DataTypes.STRING,
     userId: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'folder',
-  });
+  }, {} );
+  folder.associate = function(models) {
+    models.folder.belongsTo(models.user);
+    models.folder.hasMany(models.note);
+  };
   return folder;
 };

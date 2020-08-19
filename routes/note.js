@@ -9,7 +9,8 @@ const { render } = require('ejs');
 router.post('/', (req, res) => {
     db.note.create({
         title: req.body.title,
-        content: req.body.content
+        content: req.body.content,
+        folderId: req.body.folderId
     }).then((notes) => {
         console.log(notes)
         res.render('/show')

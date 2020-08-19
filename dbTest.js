@@ -11,14 +11,14 @@ const db = require("./models");
 
 // db.folder.create({
 //     folderTitle: 'Help notes',
-//     where: { userId: 6 }
+//     userId: 6 
 // }).then ((folders) => {
 //     console.log(folders.get())
 // })
 
-db.folder.findAll({
-    include: [db.folder],
-    include: [db.note]
+db.user.findAll({
+    include: [db.folder.userId],
+    include: [db.note.folderId]
 })
 .then(folder=>{
     folder.forEach(folder=>{
