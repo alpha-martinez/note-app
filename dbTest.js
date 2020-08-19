@@ -29,7 +29,6 @@ db.user.findAll( {
             console.log(`${folder.folderTitle}:`)
 
             })
-
          }
 
          //mutiplwe things will be in array 
