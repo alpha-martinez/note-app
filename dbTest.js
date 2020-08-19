@@ -26,7 +26,7 @@ db.user.findAll( {
     users.forEach(user=>{
         if(user.folders){
             user.folders.forEach(folder => {
-            console.log(`${folder.folderTitle}:`)
+            console.log(`${folder.folderTitle} and ${folder.userId}`)
 
             })
          }

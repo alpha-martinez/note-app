@@ -17,7 +17,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 app.use(layouts);
 
-
 // secret: what we are actually giving the user to use for our site
 // resave: save session even if modified, make this false
 //saveUninitialized: if we have a new session, we will save it, make this true
@@ -45,10 +44,6 @@ app.get('/', (req, res) => {
   res.render('index', { alerts: res.locals.alerts });
 });
 
-app.get('/profile', isLoggedIn, (req, res) => {
-  res.render('profile');
-});
-
 app.use('/auth', require('./routes/auth'));
 
 app.use('/create', (req, res) => {
@@ -59,9 +54,8 @@ app.use('/show', (req, res) => {
   res.render('show', { notes: req.notes })
 })
 
-
 app.use('/note', require('./routes/note'));
-
+app.use('/folders', isLoggedIn, require('./routes/folders'));
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
