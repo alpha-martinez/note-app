@@ -8,6 +8,9 @@ h1 {
   color: black;
   text-align: center;
 }
+h2{
+  text-align: center;
+}
 
 #title {
   height: 100;
