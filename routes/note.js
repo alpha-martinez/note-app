@@ -29,11 +29,11 @@ router.post('/note/create', (req, res) => {
 })
 
 //GET to display making a new note
-router.get('/', (res,req) => {
+router.get('/note/show', (res,req) => {
     db.note.findAll()
     .then((notes) => {
         console.log(notes)
-        res.render('note/show', { notes: notes })
+        res.redirect('note/show')
     }).catch(error => {
         console.log(error, 'error')
     })

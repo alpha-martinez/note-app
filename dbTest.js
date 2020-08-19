@@ -16,16 +16,26 @@ const db = require("./models");
 //     console.log(folders.get())
 // })
 
-db.user.findAll({
-    include: [db.folder.userId],
-    include: [db.note.folderId]
+db.user.findAll( {
+    where: { id: 6 },
+    include: [db.folder]
+    // include: [db.note.folderId]
 })
-.then(folder=>{
-    folder.forEach(folder=>{
-        console.log(`${folder.folderName}:`)
-        folder.notes.forEach(note=>{
-            console.log(note.summernote)
-        })
-        console.log('-----------')
+.then(users=>{
+  //  console.log(users[0])
+    users.forEach(user=>{
+        if(user.folders){
+            user.folders.forEach(folder => {
+            console.log(`${folder.folderTitle}:`)
+
+            })
+
+         }
+
+         //mutiplwe things will be in array 
+        // folder.notes.forEach(note=>{
+        //     console.log(note.summernote)
+        // })
+        // console.log('-----------')
     })
 })
