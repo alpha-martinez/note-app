@@ -45,16 +45,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/auth', require('./routes/auth'));
+app.use('/', require('./routes/notes'));
 
-app.use('/create', (req, res) => {
-  res.render('/note/create');
-})
-
-app.use('/show', (req, res) => {
-  res.render('show', { notes: req.notes })
-})
-
-app.use('/note', require('./routes/note'));
 app.use('/folders', isLoggedIn, require('./routes/folders'));
 
 const port = process.env.PORT || 3000;

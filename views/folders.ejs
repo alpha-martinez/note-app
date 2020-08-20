@@ -1,8 +1,7 @@
-<h2>Profile Page</h2>
-
+<h2>Folder Page</h2>
 
 <% if(folders) { %>
     <% folders.forEach(f => { %>
-      <%= f.folderTitle %>     
+      <a href="/show/<%= f.id %>"><%= f.folderTitle %> </a><br>     
    <% }) %>
 <% } %> 

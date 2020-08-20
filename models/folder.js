@@ -10,3 +10,5 @@ module.exports = (sequelize, DataTypes) => {
   };
   return folder;
 }
+
+//command shift k

@@ -3,7 +3,7 @@ const db = require("./models");
 // db.note.create({
 //     title: 'Help',
 //     summernote: 'Please work',
-//     folderId: '1'
+//     folderId: '3'
 // }).then((notes) => {
 //     console.log(notes.get())
 // })
@@ -16,25 +16,44 @@ const db = require("./models");
 //     console.log(folders.get())
 // })
 
-db.user.findAll( {
-    where: { id: 6 },
-    include: [db.folder]
+// db.user.findAll( {
+//     where: { id: 6 },
+//     include: [db.folder]
+//     // include: [db.note.folderId]
+// })
+// .then(users=>{
+//   //  console.log(users[0])
+//     users.forEach(user=>{
+//         if(user.folders){
+//             user.folders.forEach(folder => {
+//             console.log(`${folder.folderTitle} and ${folder.userId}`)
+
+//             })
+//          }
+
+//          //mutiplwe things will be in array 
+//         // folder.notes.forEach(note=>{
+//         //     console.log(note.summernote)
+//         // })
+//         // console.log('-----------')
+//     })
+// })
+
+
+
+db.folder.findAll( {
+    where: { id: 3 },
+    include: [db.note]
     // include: [db.note.folderId]
 })
-.then(users=>{
+.then(folders =>{
   //  console.log(users[0])
-    users.forEach(user=>{
-        if(user.folders){
-            user.folders.forEach(folder => {
-            console.log(`${folder.folderTitle} and ${folder.userId}`)
+    folders.forEach(folder=>{
+        if(folder.notes){
+            folder.notes.forEach(note => {
+            console.log(`${note.title}`)
 
             })
          }
-
-         //mutiplwe things will be in array 
-        // folder.notes.forEach(note=>{
-        //     console.log(note.summernote)
-        // })
-        // console.log('-----------')
     })
 })

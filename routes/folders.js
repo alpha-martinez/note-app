@@ -17,7 +17,6 @@ router.get('/', (req, res) => {
         console.log('error', err)
     })
 })
-
 //need to findOrCreate
 // router.post('/folders', (req, res) => {
 
@@ -27,5 +26,4 @@ router.get('/', (req, res) => {
 
 
 //need to be able to edit  folder
-
 module.exports = router;
