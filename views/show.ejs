@@ -2,6 +2,7 @@
     <% notes.forEach( n => { %> <br><br>
       <%= n.title %> <br>   
       <%= n.summernote %>
+      
       <form method="POST" action="/?_method=DELETE">
          <input type="hidden" name="id" value="<%= n.id %>" />
          <button type="submit">Remove</button>
@@ -9,6 +10,8 @@
    <% }) %>
 <% } %> 
 
+
+<!-- do an else statement if there are no notes, user can be redirected to create one -->
 <!-- need to create a delete button -->
 
 <!-- need to create a edit button -->

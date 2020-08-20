@@ -2,7 +2,10 @@
 
 <% if(folders) { %>
     <% folders.forEach(f => { %><br>
-      <a><%= f.folderTitle %> </a><br> <br>
+      <form method="GET" action="/folders/<%= f.id %>">
+         <input type="hidden" name="<%= f.id %>" value="<%= f.id %>">
+         <button type="submit"><%= f.folderTitle %></button>
+      </form>
       <!-- need to create a delete button -->
       <form method="POST" action="/?_method=DELETE">
          <input type="hidden" name="id" value="<%= f.id %>" />

@@ -17,6 +17,17 @@ router.get('/', (req, res) => {
     })
 })
 
+//GET route for notes
+router.get('/:id', (req, res) => {
+    db.note.findAll({
+        where: { folderId: req.params.id }
+    }).then(notes => {
+        res.render('show', { notes: notes })
+    }).catch(err => {
+        console.log(err, 'error')
+    })
+})
+
 // //create
 // router.post('/', (req, res) => {
 //     db.folder.create ({
