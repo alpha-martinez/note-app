@@ -1,12 +1,14 @@
   <h2>Create a new note</h2>
 
 <form method="POST" action="/show" >
-    <label for="title">Title</label>
+    <label for="title"> <%= folderID %> </label>
+    <!-- FOLDERID does not work -->
     <input class="form-control" id="title" name="title" required>
+    <input type="hidden" value="<%= folderID %>">
+    <label><%= folderID %></label>
     <label for="summernote">Content</label>
     <textarea type="text" id="summernote" name="editordata"></textarea>
     <input type="submit" class="btn btn-primary">
-  </div> 
 </form>
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 

@@ -3,6 +3,12 @@
       <%= n.title %> <br>   
       <%= n.summernote %>
       
+      <form method="GET" action="/notes/new">
+         <input type="hidden" name="<%= n.folderId %>" value="<%= n.folderId %> ">
+         <button type="submit">Create a note</button>
+      </form>
+
+
       <form method="POST" action="/?_method=DELETE">
          <input type="hidden" name="id" value="<%= n.id %>" />
          <button type="submit">Remove</button>

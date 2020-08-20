@@ -1,12 +1,12 @@
 const db = require("./models");
 
-// db.note.create({
-//     title: 'Help',
-//     summernote: 'Please work',
-//     folderId: '3'
-// }).then((notes) => {
-//     console.log(notes.get())
-// })
+db.note.create({
+    title: 'SHOW UP',
+    summernote: 'HIIIII',
+    folderId: '3'
+}).then((notes) => {
+    console.log(notes.get())
+})
 
 
 // db.folder.create({
