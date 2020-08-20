@@ -44,9 +44,12 @@ app.get('/', (req, res) => {
   res.render('index', { alerts: res.locals.alerts });
 });
 
-app.use('/auth', require('./routes/auth'));
-app.use('/', require('./routes/notes'));
+app.get('/', (req, res) => {
+  res.render('new')
+})
 
+app.use('/auth', require('./routes/auth'));
+app.use('/notes', require('./routes/notes'));
 app.use('/folders', isLoggedIn, require('./routes/folders'));
 
 const port = process.env.PORT || 3000;

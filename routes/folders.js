@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
         include: [{ model: db.folder }]
     })
     .then(user => {
-        res.render('folders', { folders: user.folders })
+        res.render('folder', { folders: user.folders })
     }).catch(err => {
         console.log('error', err)
     })
