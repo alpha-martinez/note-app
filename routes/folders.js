@@ -20,10 +20,10 @@ router.get('/', (req, res) => {
 //GET route for notes
 router.get('/:id', (req, res) => {
     console.log(req.params.id)
-    db.note.findAll({
-        where: { folderId: req.params.id }
-    }).then(notes => {
-        res.render('show', { notes: notes } )
+    db.folder.findByPk(req.params.id, {
+        include: { model: db.note }
+    }).then(folder => {
+        res.render('show', { folder: folder } )
     }).catch(err => {
         console.log(err, 'error')
     })

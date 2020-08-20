@@ -1,15 +1,13 @@
+
 <div class='container2'> 
-   <% if(notes) { %>
-      <% notes.forEach( n => { %> <br><br>
-        <%= n.title %> <br>   
-        <%= n.summernote %>  
-        <form method="POST" action="/?_method=DELETE">
-         <input type="hidden" name="id" value="<%= n.id %>" />
+   <h3>YOUR FOLDERS FOOL!</h3>
+   <a href="/notes/new/<%= folder.id %>">CREATE A NEW MOFO NOTE</a>
+   <% if(folder.notes) { %>
+      <% folder.notes.forEach( n => { %> <br><br>
+        <a href="/notes/<%= n.id %>"><%= n.title %> </a><br>   
+        <%- n.summernote %>  
+      <form method="POST" action="/notes/<%= n.id %>?_method=DELETE">
          <button type="submit">Remove</button>
-         <form method="GET" action="/notes/new/<%= notes.folderId %> ">
-            <input type="hidden" name="<% notes.folderId %>" value="<% notes.folderId %> ">
-            <button type="submit">Create a note</button>
-         </form>
       </form>  
       <% }) %>
       <% } %> 

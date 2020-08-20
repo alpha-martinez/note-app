@@ -16,7 +16,6 @@ router.get('/new/:id', (req, res) => {
 router.post('/new', (req, res) => {
   console.log(req.body.summernote)
   let summernote = req.body.summernote
-  summernote = summernote.slice(3, (summernote.length - 4))
   db.note.create({
   title: req.body.title,
   summernote: summernote,
@@ -34,25 +33,28 @@ router.post('/new', (req, res) => {
   })
 })
 
-// GET/:ID
-// router.get('/:id', async (req, res) => {
-//   res.render('detail')
+//GET/:ID
+router.get('/:id', async (req, res) => {
+  db.note.findByPk(req.params.id)
+  .then(note => {
+    res.render('detail', { note: note })
+  })
 
-// });
+});
 
 //DELETE
-// router.delete("/", async (req, res) => {
-//     try {
-//       await db.pokemon.destroy({
-//         where: {
-//           title: req.body.title,
-//         },
-//       });
-//       res.redirect('show');
-//     } catch (error) {
-//       console.log("error");
-//     }
-//   });
+router.delete("/:id", async (req, res) => {
+    try {
+      await db.note.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+      res.redirect('/folders');
+    } catch (error) {
+      console.log("error");
+    }
+  });
 
 
 
