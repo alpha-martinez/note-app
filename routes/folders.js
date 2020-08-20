@@ -19,10 +19,11 @@ router.get('/', (req, res) => {
 
 //GET route for notes
 router.get('/:id', (req, res) => {
+    console.log(req.params.id)
     db.note.findAll({
         where: { folderId: req.params.id }
     }).then(notes => {
-        res.render('show', { notes: notes })
+        res.render('show', { notes: notes } )
     }).catch(err => {
         console.log(err, 'error')
     })

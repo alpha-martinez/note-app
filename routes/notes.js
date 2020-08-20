@@ -6,26 +6,53 @@ const { route } = require('./auth');
 const { render } = require('ejs');
 const folder = require('../models/folder');
 
-router.get('/new', (req, res) => {
-  const folderID = req.body.name
+router.get('/new/:id', (req, res) => {
+  const folderID = req.params.id
   // need to find a new way to send folderID
   res.render('new', { folderID: folderID })
 })
 
 //POST new notes
 router.post('/new', (req, res) => {
+  console.log(req.body.summernote)
+  let summernote = req.body.summernote
+  summernote = summernote.slice(3, (summernote.length - 4))
   db.note.create({
   title: req.body.title,
-  summernote: req.body.summernote,
-  folderId: req.body.value
-  }).then((post) => {
-    res.render('show')
+  summernote: summernote,
+  folderId: req.body.folderID
+  }).then(() => {
+    db.note.findAll({
+        where: { folderId: req.body.folderID }
+    }).then(notes => {
+        res.render('show', { notes: notes })
+    }).catch(err => {
+        console.log(err, 'error')
+    })
   }).catch((error) => {
-    console.log(error, 'error')
+    console.log(error)
   })
 })
 
+// GET/:ID
+// router.get('/:id', async (req, res) => {
+//   res.render('detail')
 
+// });
+
+//DELETE
+// router.delete("/", async (req, res) => {
+//     try {
+//       await db.pokemon.destroy({
+//         where: {
+//           title: req.body.title,
+//         },
+//       });
+//       res.redirect('show');
+//     } catch (error) {
+//       console.log("error");
+//     }
+//   });
 
 
 
