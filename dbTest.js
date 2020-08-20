@@ -47,11 +47,11 @@ db.folder.findAll( {
     // include: [db.note.folderId]
 })
 .then(folders =>{
-  //  console.log(users[0])
+  console.log(`${folders.folderTitle}`)
     folders.forEach(folder=>{
         if(folder.notes){
             folder.notes.forEach(note => {
-            console.log(`${note.title}`)
+            console.log(`${note.title}: ${note.summernote}`)
 
             })
          }

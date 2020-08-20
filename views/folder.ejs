@@ -1,7 +1,7 @@
 <h2>Folder Page</h2>
 
-<% if(folders) { %>
-    <% folders.forEach(f => { %>
-      <a href="/show/<%= f.id %>"><%= f.folderTitle %> </a><br>     
+<% if(folder ) { %>
+    <% folder.forEach(f => { %>
+      <a><%= f.folderTitle %> </a><br>     
    <% }) %>
 <% } %> 

@@ -6,6 +6,19 @@ const { route } = require('./auth');
 const { render } = require('ejs');
 const folder = require('../models/folder');
 
+//POST new notes
+router.post('/new', (req, res) => {
+  db.note.create({
+  title: req.body.title,
+  summernote: req.body.summernote,
+  folderId: req.body.folderId
+  }).then((post) => {
+    res.redirect('/show')
+  }).catch((error) => {
+    console.log(error, 'error')
+  })
+})
+
 //display your notes
 router.get('/show', (req, res)=>{
     db.note.findAll()
@@ -19,23 +32,17 @@ router.get('/show', (req, res)=>{
     })
 })
 
-//GET to display making a new note
-router.get('/new', (req, res) => {
-  res.render('new')
-})
+//GET by :id to display one specific note
+// router.get('/:id', (req, res) => {
+//   db.note.findOne({
+//     where: { id: req.params.id }
+//   }).then((note) => {
+//     res.render('/', { note: note })
+//   }).catch((error) => {
+//     console.log(error, 'error')
+//   })
+// })
 
-//POST new notes
-router.post('/new', (req, res) => {
-  db.note.create({
-  title: req.body.title,
-  content: req.body.content,
-  folderId: req.body.folderId
-  }).then((post) => {
-    res.redirect('show')
-  }).catch((error) => {
-    console.log(error, 'error')
-  })
-})
 
 
 

@@ -8,20 +8,17 @@ const { render } = require('ejs');
 //need to be able to create and display folders
 router.get('/', (req, res) => {
     const userId = req.user.dataValues.id
-    db.user.findByPk(userId, {
-        include: [{ model: db.folder }]
-    })
-    .then(user => {
-        res.render('folder', { folders: user.folders })
+    db.folder.findOne(
+        { where: userId, 
+        include: [ db.note ] }
+    )
+    .then(folder => {
+        console.log(folder)
+        res.render('folder', { folder })
     }).catch(err => {
         console.log('error', err)
     })
 })
-//need to findOrCreate
-// router.post('/folders', (req, res) => {
-
-// })
-//need to be able to delete a folder
 
 
 
