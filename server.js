@@ -52,6 +52,9 @@ app.use('/auth', require('./routes/auth'));
 app.use('/notes', require('./routes/notes'));
 app.use('/folders', isLoggedIn, require('./routes/folders'));
 
+
+
+
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`);
