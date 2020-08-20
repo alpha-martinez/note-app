@@ -39,8 +39,6 @@ router.get('/:id', (req, res) => {
 //     })
 // })
 
-//DELETE
-
 //EDIT
 
 //need to be able to edit  folder

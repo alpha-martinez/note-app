@@ -1,20 +1,23 @@
-<% if(notes) { %>
-    <% notes.forEach( n => { %> <br><br>
-      <%= n.title %> <br>   
-      <%= n.summernote %>
-      
-      <form method="GET" action="/notes/new">
-         <input type="hidden" name="<%= n.folderId %>" value="<%= n.folderId %> ">
-         <button type="submit">Create a note</button>
-      </form>
+<div class='container2'> 
+   <% if(notes) { %>
+      <% notes.forEach( n => { %> <br><br>
+        <%= n.title %> <br>   
+        <%= n.summernote %>
+        
+        <form method="GET" action="/notes/new">
+           <input type="hidden" name="<%= n.folderId %>" value="<%= n.folderId %> ">
+           <button type="submit">Create a note</button>
+        </form>
+  
+  
+        <form method="POST" action="/?_method=DELETE">
+           <input type="hidden" name="id" value="<%= n.id %>" />
+           <button type="submit">Remove</button>
+        </form>  
+     <% }) %>
+  <% } %> 
+</div>
 
-
-      <form method="POST" action="/?_method=DELETE">
-         <input type="hidden" name="id" value="<%= n.id %>" />
-         <button type="submit">Remove</button>
-      </form>  
-   <% }) %>
-<% } %> 
 
 
 <!-- do an else statement if there are no notes, user can be redirected to create one -->
