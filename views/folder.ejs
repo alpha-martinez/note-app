@@ -1,7 +1,20 @@
 <h2>Folder Page</h2>
 
-<% if(folder ) { %>
-    <% folder.forEach(f => { %>
-      <a><%= f.folderTitle %> </a><br>     
+<% if(folders) { %>
+    <% folders.forEach(f => { %><br>
+      <a><%= f.folderTitle %> </a><br> <br>
+      <!-- need to create a delete button -->
+      <form method="POST" action="/?_method=DELETE">
+         <input type="hidden" name="id" value="<%= f.id %>" />
+         <button type="submit">Remove</button>
+      </form>   
    <% }) %>
 <% } %> 
+
+<!-- need to connect the folders with a tag so it can 
+take you to the notes page -->
+
+<!-- need to create a POST method -->
+
+
+

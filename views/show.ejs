@@ -1,7 +1,15 @@
 <% if(notes) { %>
     <% notes.forEach( n => { %> <br><br>
       <%= n.title %> <br>   
-      <%= n.summernote %> 
-      <%= n.folderId %>
+      <%= n.summernote %>
+      <form method="POST" action="/?_method=DELETE">
+         <input type="hidden" name="id" value="<%= n.id %>" />
+         <button type="submit">Remove</button>
+      </form>  
    <% }) %>
 <% } %> 
+
+<!-- need to create a delete button -->
+
+<!-- need to create a edit button -->
+

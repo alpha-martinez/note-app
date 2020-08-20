@@ -7,13 +7,13 @@ const { render } = require('ejs');
 const folder = require('../models/folder');
 
 //POST new notes
-router.post('/new', (req, res) => {
+router.post('new', (req, res) => {
   db.note.create({
   title: req.body.title,
   summernote: req.body.summernote,
   folderId: req.body.folderId
   }).then((post) => {
-    res.redirect('/show')
+    res.rerender('show')
   }).catch((error) => {
     console.log(error, 'error')
   })
@@ -24,7 +24,7 @@ router.get('/show', (req, res)=>{
     db.note.findAll()
     .then(notes => {
       console.log(notes)
-        //res.sendStatus(200)
+        res.sendStatus(200)
         res.render('show', { notes: notes  })
         
     }).catch((err) => {
@@ -32,7 +32,7 @@ router.get('/show', (req, res)=>{
     })
 })
 
-//GET by :id to display one specific note
+// //GET by :id to display one specific note
 // router.get('/:id', (req, res) => {
 //   db.note.findOne({
 //     where: { id: req.params.id }
