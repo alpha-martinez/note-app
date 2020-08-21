@@ -58,7 +58,7 @@ router.delete("/:id", async (req, res) => {
         id: req.body.id
       },
     });
-    res.redirect('/folders');
+    res.redirect(`/folders`);
   } catch (error) {
     console.log("error");
   }
