@@ -8,31 +8,37 @@ const folder = require('../models/folder');
 
 router.get('/new/:id', (req, res) => {
   const folderID = req.params.id
-  // need to find a new way to send folderID
   res.render('new', { folderID: folderID })
 })
 
 //POST new notes
 router.post('/new', (req, res) => {
-  console.log(req.body.summernote)
-  let summernote = req.body.summernote
+  //console.log(req.body.summernote)
+  //let summernote = req.body.summernote
   db.note.create({
   title: req.body.title,
   summernote: summernote,
   folderId: req.body.folderID
-  }).then(() => {
-    db.note.findAll({
-        where: { folderId: req.body.folderID }
-    }).then(notes => {
-        res.render('show', { notes: notes })
-    }).catch(err => {
-        console.log(err, 'error')
-    })
+  }).then((note) => {
+    res.redirect(`/folders/${req.body.folderID}`)
   }).catch((error) => {
     console.log(error)
   })
 })
 
+router.put('/:id', (req, res) => {
+  console.log(req.params.id)
+    db.note.update({
+      summernote: req.body.summernote
+    }, 
+    { where: { folderId: req.params.folderID } })
+    .then((note)=> {
+      console.log(note.get())
+      res.redirect(`/folders/${note.folderId}`)
+    }).catch(err => {
+      console.log(err, 'error')
+    })
+})
 //GET/:ID
 router.get('/:id', async (req, res) => {
   db.note.findByPk(req.params.id)
@@ -47,51 +53,15 @@ router.delete("/:id", async (req, res) => {
     try {
       await db.note.destroy({
         where: {
-          id: req.params.id,
+          title: req.params.id,
         },
       });
-      res.redirect('/folders');
+      res.redirect(`/folders/${note.folderId}`);
     } catch (error) {
       console.log("error");
     }
   });
 
-
-
-
-
-//display your notes
-// router.get('/show', (req, res)=>{
-//     db.note.findAll()
-//     .then(notes => {
-//       console.log(notes)
-//         res.sendStatus(200)
-//         res.render('show', { notes: notes  })
-        
-//     }).catch((err) => {
-//       console.log('Error', err)
-//     })
-// })
-
-// //GET by :id to display one specific note
-// router.get('/:id', (req, res) => {
-//   db.note.findOne({
-//     where: { id: req.params.id }
-//   }).then((note) => {
-//     res.render('/', { note: note })
-//   }).catch((error) => {
-//     console.log(error, 'error')
-//   })
-// })
-
-
-
-
-
-
-
-
-//DELETE
 
 //EDIT
   
