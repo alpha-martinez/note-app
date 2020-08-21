@@ -11,10 +11,16 @@ router.get('/', (req, res) => {
     db.user.findByPk(userId, {
         include: [{ model: db.folder }]
     }).then(user => {
+        console.log(user)
         res.render('folder', { folders: user.folders})
     }).catch(err => {
         console.log(err, 'error')
     })
+})
+
+router.get('/form', (req, res) => {
+    console.log('🥺')
+    res.render('form')
 })
 
 //GET route for notes
@@ -30,17 +36,15 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.get('/form', (req, res) => {
-    res.render('form')
-})
 
 
 //POST route to create a new folder
 router.post('/form', (req, res) => {
     db.folder.create({
+        userId: req.user.dataValues.id,
         folderTitle: req.body.folderTitle
-    }).then(() => {
-        res.redirect(`/folders`)
+    }).then((folderTitle) => {
+        res.redirect(`/folders/${folderTitle.id}`)
     }).catch(err => {
         console.log(err, 'coool story bro')
     })

@@ -14,7 +14,7 @@ router.get('/new/:id', (req, res) => {
 //POST new notes
 router.post('/new', (req, res) => {
   //console.log(req.body.summernote)
-  //let summernote = req.body.summernote
+  let summernote = req.body.summernote
   db.note.create({
   title: req.body.title,
   summernote: summernote,
