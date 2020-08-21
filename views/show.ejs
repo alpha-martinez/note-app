@@ -6,7 +6,7 @@
       <% folder.notes.forEach( n => { %> <br><br>
         <a href="/notes/<%= n.id %>"><%= n.title %> </a><br>   
         <%- n.summernote %>  
-      <form method="POST" action="/notes/new/<%= n.id %>?_method=DELETE">
+      <form method="POST" action="/notes/<%= n.title %>?_method=DELETE">
          <button type="submit">Remove</button>
       </form>  
       <% }) %>

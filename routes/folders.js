@@ -30,6 +30,11 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.get('/form', (req, res) => {
+    res.render('form')
+})
+
+
 //POST route to create a new folder
 router.post('/form', (req, res) => {
     db.folder.create({
