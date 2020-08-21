@@ -27,9 +27,9 @@ router.post('/new', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  console.log(req.params.id)
-  console.log('💩')
-  console.log(req.body.summernote)
+  // console.log(req.params.id)
+  // console.log('💩')
+  // console.log(req.body.summernote)
     db.note.findByPk(req.params.id)
     .then(note => {
       note.summernote = req.body.summernote
@@ -39,8 +39,8 @@ router.put('/:id', (req, res) => {
     .catch(err => {
       console.log(err, 'error')
     })
-   
 })
+
 //GET/:ID
 router.get('/:id', async (req, res) => {
   db.note.findByPk(req.params.id)
@@ -52,19 +52,16 @@ router.get('/:id', async (req, res) => {
 
 //DELETE
 router.delete("/:id", async (req, res) => {
-    try {
-      await db.note.destroy({
-        where: {
-          title: req.body.title,
-        },
-      });
-      res.redirect(`/folders/${note.folderId}`);
-    } catch (error) {
-      console.log("error");
-    }
-  });
-
-
-//EDIT
+  try {
+    await db.note.destroy({
+      where: {
+        id: req.body.id
+      },
+    });
+    res.redirect('/folders');
+  } catch (error) {
+    console.log("error");
+  }
+});
   
 module.exports = router;

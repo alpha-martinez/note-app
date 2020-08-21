@@ -1,22 +1,16 @@
 
 <div class='container2'> 
-   <h3>YOUR FOLDERS FOOL!</h3>
+   <h3>YOUR NOTES FOOL!</h3>
    <a href="/notes/new/<%= folder.id %>">CREATE A NEW MOFO NOTE</a>
    <% if(folder.notes) { %>
       <% folder.notes.forEach( n => { %> <br><br>
         <a href="/notes/<%= n.id %>"><%= n.title %> </a><br>   
         <%- n.summernote %>  
-      <form method="POST" action="/notes/<%= n.title %>?_method=DELETE">
+      <form method="POST" action="/notes/<%= n.id %>?_method=DELETE">
+         <input type="hidden" name="id" value="<%= n.id %>">
          <button type="submit">Remove</button>
       </form>  
       <% }) %>
       <% } %> 
    </div>
-   
-   
-
-<!-- do an else statement if there are no notes, user can be redirected to create one -->
-<!-- need to create a delete button -->
-
-<!-- need to create a edit button -->
 
