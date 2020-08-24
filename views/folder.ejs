@@ -1,6 +1,6 @@
-<h2>Folder Page</h2>
-<h1>HELLOOOOO</h1>
-<a href="/folders/form">Create new folder here mofo</a>
+<h2>Your folders: </h2>
+
+<a class="folders" href="/folders/form">Create new folder here mofo</a>
 <div class='container'>
    <% if(folders) { %>
       <% folders.forEach(f => { %><br>
@@ -8,11 +8,6 @@
            <input type="hidden" name="<%= f.id %>" value="<%= f.id %>">
            <button type="submit"><%= f.folderTitle %></button>
         </form>
-        <!-- need to create a delete button -->
-        <!-- <form method="POST" action="/?_method=DELETE">
-           <input type="hidden" name="id" value="f.id " />
-           <button type="submit">Remove</button>
-        </form>    -->
      <% }) %>
   <% } %> 
 </div>

@@ -1,31 +1,91 @@
-*{
+/* *{
   outline: 1px dotted red;
   font-weight:bolder;
-}
+} */
 
 nav ul li {
   text-decoration: none;
   display: inline-block;
   margin-right: .3em;
+  color: aqua;
 }
 
-h1 {
-  color: black;
+body {
+  margin: 0 auto;
+  font-family: 'Indie Flower', cursive;
+  background-image: url("https://cdn1.vectorstock.com/i/1000x1000/56/25/artist-table-objects-top-view-empty-place-paper-vector-20575625.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
+  color: rgb(228, 252, 9);
+  font-size: 40px;
 }
-h2{
-  text-align: center;
+
+label, li {
+  height: 0em;
+  padding-top: 0em;
+  /* opacity: 0.5; */
+  background: rgb(95, 93, 93);
+  /* border-top: 1px solid #ccc; */
+  border-bottom: 3px solid #ccc;
+  margin-top: 1 em;
+  /* color: rgb(20, 24, 12); */
+}
+
+.homepage {
+  color: rgb(238, 14, 14);
+  font-weight: bolder;
+  height: 3em;
+  padding-top: 1em;
+  /* opacity: 0.5; */
+  /* background: rgb(95, 93, 93); */
+  /* border-top: 3px solid #ccc; */
+  /* border-bottom: 3px solid #ccc; */
+  margin-top: 4.0em;
+  font-size: 37px;
+}
+
+a {
+  font-weight: bolder;
+  color: rgb(17, 8, 5);
+  font-size: 40px;
+}
+
+button {
+  margin: 5px;
 }
 
 .container {
-  text-align: center;
+  /* background-color: rgba(207, 127, 127, 0.75); */
+  border-radius: 20px;
+  margin: 10px auto;
+  padding: 5px;
 }
 
-.container2 {
-  text-align: center;
+.container-2 {
+  background: linear-gradient(rgba(49, 27, 147, 1), rgba(49, 27, 147, .750));
+  border-radius: 15px;
+  margin: 10px auto;
+  padding: 5px;
+  color: white;
 }
 
-#title {
-  height: 100;
-  width: 900;
+.welcome, .welcome-p, .signup, .login {
+  text-align: center;
+  color: rgb(8, 8, 8);
+  font-weight: bold;
+  height: 3em;
+  padding-top: 1em;
+  /* opacity: 0.5; */
+  /* background: rgb(95, 93, 93); */
+  /* border-top: 3px solid #ccc; */
+  /* border-bottom: 3px solid #ccc; */
+  margin-top: 10.0em;
+  font-size: 25px;
 }
+
+.boring {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+

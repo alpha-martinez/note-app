@@ -19,17 +19,17 @@
     <header>
       <nav>
         <ul>
+          <li><a href="/folders">Folders</a></li>
           <% if(!currentUser) { %>
             <li><a href="/auth/signup">Signup</a></li>
             <li><a href="/auth/login">Login</a></li>
           <% } else { %>
             <li><a href="/auth/logout">Logout</a></li>
-            <li><a href="/folders">Folders</a></li>
           <% } %> 
         </ul>
       </nav>
     </header>
-    <h1>Note App</h1>
+    <h1 class="layout-title" href="https://fontmeme.com/fonts/midnight-sushihuedesign-font/"><img src="https://fontmeme.com/permalink/200824/4033d3774948f6969359ab4cdf6ad41c.png" alt="midnight-sushihuedesign-font" border="0"></h1>
     <%- body %>
   </body>
 </html>
