@@ -115,40 +115,11 @@ button {
   /* margin: 0 auto; */
 }
 
-.note {
-  margin: 0 auto;
-  /* background: rgb(88, 88, 87); */
-  position: relative;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  color: brown;
-  font-size: 20px;
-}
-
-.note-2 {
-  color: rgb(8, 8, 8);
-  font-weight: bold;
-  height: 3em;
-  padding-top: 1em;
-  opacity: 0.5; 
-  /* background: rgb(95, 93, 93); */
-  /* border-top: 3px solid #ccc; */
-  /* border-bottom: 3px solid #ccc; */
-  /* margin-top: 1.0em;
-  margin: 0 auto;
-  font-size: 25px;
-  /* margin: 0 auto; */
-}
-
 .text-form{ 
   width: 900px;
   /* border: solid pink; */
   margin-left: 25%;
 }
-
-
 
 .boring {
   font-family: 'Source Sans Pro', sans-serif;
