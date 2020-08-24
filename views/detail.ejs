@@ -1,6 +1,6 @@
 <h2><%= note.title %></h2>
 
-<form method="POST" action="/notes/<%= note.id %>?_method=PUT">
+<form class="text-form" method="POST" action="/notes/<%= note.id %>?_method=PUT">
     <label for="summernote">Content</label>
     <textarea type="text" id="summernote" name="summernote"><%= note.summernote%></textarea>
     <input type="submit" class="btn btn-primary">

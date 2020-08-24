@@ -1,107 +1,49 @@
-# Express Authentication
+## Project Requirements
 
-Express authentication template using Passport + flash messages + custom middleware
+- Must have a login/sign up functionality, with hashed passwords and an authorization flow. 
+- Have at least 2 models (not including the user model) that represents the functionality of your app. 
+- have at least one third api 
+- Have a complete RESTful routes for at least one of your resources (models) with GET, POST, PUT, and DELETE. 
+- Include a readme file that explains your app.
 
-## What it includes
+## Technoligies I used for my app
 
 * Sequelize user model / migration
-* Settings for PostgreSQL
+* PostgreSQL
 * Passport and passport-local for authentication
-* Sessions to keep user logged in between pages
+* CSS and HTML
 * Flash messages for errors and successes
 * Passwords that are hashed with BCrypt
 * EJS Templating and EJS Layouts
+* Text rich editor API
 
-### User Model
+## What is my APP about?
 
-| Column Name | Data Type | Notes |
-| --------------- | ------------- | ------------------------------ |
-| id | Integer | Serial Primary Key, Auto-generated |
-| name | String | Must be provided |
-| email | String | Must be unique / used for login |
-| password | String | Stored as a hash |
-| createdAt | Date | Auto-generated |
-| updatedAt | Date | Auto-generated |
+I came up with a note app idea because I personally like to keep my notes organized in different folders so I know where I can go back to refer to them if I ever needed to. In my app, 
+- a user should be able to sign up and create an account 
+- a user should also be able to log in
+- a user will first see a welcome page and then click on folders
+- the user will then click on the desire folder they wish to look at and create a new note from there for that specific folder if needed/wanted
+- the user can always go back to delete a note if they don't feel like they need it or they can go back and update their current note with more information.
 
-### Default Routes
 
-| Method | Path | Location | Purpose |
-| ------ | ---------------- | -------------- | ------------------- |
-| GET | / | server.js | Home page |
-| GET | /auth/login | auth.js | Login form |
-| GET | /auth/signup | auth.js | Signup form |
-| POST | /auth/login | auth.js | Login user |
-| POST | /auth/signup | auth.js | Creates User |
-| GET | /auth/logout | auth.js | Removes session info |
-| GET | /profile | server.js | Regular User Profile |
+## Installation
 
-## Steps To Use
+After forking and cloning into your own repo
 
-#### 1. Create a new repo on Github and use your 'express-authentication' as the template
-
-When we are finished with this boilerplate, we are going to make it a template on Github that will allow us to create a new repo on Github with all this code already loaded in.
-* Go to `github.com` and create a new repository. In the template dropdown, choose this template.
-* Clone your new repo to your local machine
-* Get Codin'!
-
-#### 2. Delete any .keep files
-
-The `.keep` files are there to maintain the file structure of the auth. If there is a folder that has nothing in it, git won't add it. The dev work around is to add a file to it that has nothing in it, just forces git to keep the folder so we can use it later.
-
-#### 3. Install node modules from the package.json
-
-```
-npm install
-```
-
-(Or just `npm i` for short)
-
-#### 4. Customize with new project name
-
-Remove defaulty type stuff. Some areas to consider are:
-
-* Title in `layout.ejs`
-* Description/Repo Link in `package.json`
-* Remove boilerplate's README content and replace with new project's readme
-
-#### 5. Create a new database for the new project
-
-Using the sequelize command line interface, you can create a new database from the terminal.
-
-```
-createdb <new_db_name>
-```
-
-#### 6. Update `config.json`
-
-* Change the database name
-* Other settings are likely okay, but check username, password, and dialect
-
-#### 7. Check the models and migrations for relevance to your project's needs
-
-For example, if your project requires a birthdate field, then don't add that in there. 
-
-> When changing your models, update both the model and the migration.
-
-#### 8. Run the migrations
-
-```
+1. Run npm install
+2. Update congif.json to your desired database name
+3. Run sequelize db:create
+4. After ensuring you put the correct name in your config.json, run 
 sequelize db:migrate
+6. create a .env file to input your secret session = 'Any string value'
+7. Run nodemon and open your browser to localhost:3000
+
+## Blockers
+
+Through my project, the one main aspect that kept getting my confuse was the routes. I had to remind myself how do the routes connect with my views and had to remind myself that whenever you had 
+
+```javascript 
+app.use('/notes', require('./routes/notes'));
 ```
-
-#### 9. Add a `.env` file with the following fields:
-
-* SESSION_SECRET: Can be any random string; usually a hash in production
-* PORT: Usually 3000 or 8000
-
-#### 10. Run server; make sure it works
-
-```
-nodemon
-```
-
-or
-
-```
-node index.js
-```
+The beginning already lets the app.get('/) know that before the slash you are in the notes and anything after it is what you want the page to get redirected or rendered to. However, I always kept getting myself confused

@@ -132,31 +132,22 @@ button {
   font-weight: bold;
   height: 3em;
   padding-top: 1em;
-  /* opacity: 0.5; */
+  opacity: 0.5; 
   /* background: rgb(95, 93, 93); */
   /* border-top: 3px solid #ccc; */
   /* border-bottom: 3px solid #ccc; */
-  /* margin-top: 1.0em; */
+  /* margin-top: 1.0em;
   margin: 0 auto;
   font-size: 25px;
   /* margin: 0 auto; */
 }
 
-#summernote {
-  color: rgb(8, 8, 8);
-  font-weight: bold;
-  height: 3em;
-  padding-top: 1em;
-  /* opacity: 0.5; */
-  /* background: rgb(95, 93, 93); */
-  /* border-top: 3px solid #ccc; */
-  /* border-bottom: 3px solid #ccc; */
-  /* margin-top: 1.0em; */
-  /* margin: 0 auto; */
-  margin-left: 10.0em;
-  font-size: 12px;
-  /* margin: 0 auto; */
+.text-form{ 
+  width: 900px;
+  /* border: solid pink; */
+  margin-left: 25%;
 }
+
 
 
 .boring {
