@@ -126,7 +126,11 @@ button {
 }
 
 .error {
-  color: white;
+  color: rgb(13, 0, 199);
   font-weight: bolder;
   font-size: 40px;
+  margin-top: 3em;
 }
+
+#gif{
+margin-top: 1em;}
