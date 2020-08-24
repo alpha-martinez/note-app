@@ -3,6 +3,10 @@
   font-weight:bolder;
 } */
 
+/* * {
+  position: relative
+} */
+
 nav ul li {
   text-decoration: none;
   display: inline-block;
@@ -84,6 +88,19 @@ button {
   margin-top: 10.0em;
   font-size: 25px;
 }
+
+.note {
+  margin: 0;
+  /* background: rgb(88, 88, 87); */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  color: brown;
+  font-size: 20px;
+}
+
 
 .boring {
   font-family: 'Source Sans Pro', sans-serif;

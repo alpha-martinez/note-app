@@ -4,8 +4,7 @@
    <a href="/notes/new/<%= folder.id %>">CREATE A NEW MOFO NOTE</a>
    <% if(folder.notes) { %>
       <% folder.notes.forEach( n => { %> <br><br>
-        <a href="/notes/<%= n.id %>"><%= n.title %> </a><br>   
-        <%- n.summernote %>  
+        <a href="/notes/<%= n.id %>"><%= n.title %> </a><br>    
       <form method="POST" action="/notes/<%= n.id %>?_method=DELETE">
          <input type="hidden" name="id" value="<%= n.id %>">
          <button type="submit">Remove</button>
