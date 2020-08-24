@@ -1,7 +1,7 @@
 
 <div class='container-2'> 
-   <h3>These are all of your notes.</h3>
    <a href="/notes/new/<%= folder.id %>" class="new">Make a new note by clicking me!</a>
+   <h3>These are all of your notes:</h3>
    <% if(folder.notes) { %>
       <% folder.notes.forEach( n => { %> <br><br>
         <a id="title" href="/notes/<%= n.id %>">

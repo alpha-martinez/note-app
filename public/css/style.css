@@ -22,7 +22,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
-  color: rgb(228, 252, 9);
+  color: rgb(7, 7, 6);
   font-size: 40px;
 }
 
@@ -89,6 +89,17 @@ button {
   color: rgb(16, 33, 189);
 }
 
+.f-title {
+  color: rgb(14, 207, 117);
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.folders {
+  color: rgb(201, 199, 212);
+  font-weight: bolder;
+}
+
 .welcome, .welcome-p, .signup, .login {
   text-align: center;
   color: rgb(8, 8, 8);
@@ -101,18 +112,50 @@ button {
   /* border-bottom: 3px solid #ccc; */
   margin-top: 10.0em;
   font-size: 25px;
+  /* margin: 0 auto; */
 }
 
 .note {
-  margin: 0;
+  margin: 0 auto;
   /* background: rgb(88, 88, 87); */
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
   color: brown;
   font-size: 20px;
+}
+
+.note-2 {
+  color: rgb(8, 8, 8);
+  font-weight: bold;
+  height: 3em;
+  padding-top: 1em;
+  /* opacity: 0.5; */
+  /* background: rgb(95, 93, 93); */
+  /* border-top: 3px solid #ccc; */
+  /* border-bottom: 3px solid #ccc; */
+  /* margin-top: 1.0em; */
+  margin: 0 auto;
+  font-size: 25px;
+  /* margin: 0 auto; */
+}
+
+#summernote {
+  color: rgb(8, 8, 8);
+  font-weight: bold;
+  height: 3em;
+  padding-top: 1em;
+  /* opacity: 0.5; */
+  /* background: rgb(95, 93, 93); */
+  /* border-top: 3px solid #ccc; */
+  /* border-bottom: 3px solid #ccc; */
+  /* margin-top: 1.0em; */
+  /* margin: 0 auto; */
+  margin-left: 10.0em;
+  font-size: 12px;
+  /* margin: 0 auto; */
 }
 
 
