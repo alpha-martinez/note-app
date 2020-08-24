@@ -125,3 +125,8 @@ button {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.error {
+  color: white;
+  font-weight: bolder;
+  font-size: 40px;
+}
